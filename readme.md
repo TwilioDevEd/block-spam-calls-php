@@ -27,6 +27,16 @@ To run the app locally, clone this repository and `cd` into its directory:
     composer install --no-interaction
     ```
 
+1. Create the `.env` file with the default application settings:
+    ```bash
+    cp .env.example .env
+    ```
+
+1. Generate the `APP_KEY`:
+    ```bash
+    php artisan key:generate
+    ```
+
 1. Run the application.
 
   ```bash
@@ -41,9 +51,7 @@ Once you have started ngrok, update your TwiML app's voice URL setting to use yo
 http://88b37ada.ngrok.io/api/voice
 ```
 
-1. Check it out at [http://localhost:8000](http://localhost:8000)
-
-That's it
+That's it!
 
 ## Run the tests
 
