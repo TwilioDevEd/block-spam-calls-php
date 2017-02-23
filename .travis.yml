@@ -4,6 +4,9 @@ php:
 install:
 - composer self-update
 - composer install --no-interaction
+- cp .env.example .env
+- php artisan key:generate
+script: ./vendor/bin/phpunit
 env:
   global:
   - APP_ENV=testing
