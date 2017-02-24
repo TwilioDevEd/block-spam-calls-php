@@ -23,7 +23,7 @@ class ValidateVoiceRequest
         };
 
         $rejectIncomingCall = function () {
-            $twiml = new Twilio\Twiml();
+            $twiml = new \Twilio\Twiml();
             $twiml->reject();
             return response($twiml)->header('Content-Type', 'text/xml');
         };
