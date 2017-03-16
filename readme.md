@@ -16,8 +16,7 @@ To run the app locally, clone this repository and `cd` into its directory:
 
 1. First clone this repository and `cd` into its directory:
    ```bash
-   git clone git@github.com:TwilioDevEd/block-spam-calls-php.git
-
+   git clone https://github.com/TwilioDevEd/block-spam-calls-php.git
    cd block-spam-calls-php
    ```
 
@@ -39,9 +38,9 @@ To run the app locally, clone this repository and `cd` into its directory:
 
 1. Run the application.
 
-  ```bash
-  $ php artisan serve
-  ```
+    ```bash
+    php artisan serve
+    ```
 
 To actually forward incoming calls, your development server will need to be publicly accessible. [We recommend using ngrok to solve this problem](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
 
@@ -50,8 +49,6 @@ Once you have started ngrok, update your TwiML app's voice URL setting to use yo
 ```bash
 http://88b37ada.ngrok.io/api/voice
 ```
-
-That's it!
 
 ## Run the tests
 
