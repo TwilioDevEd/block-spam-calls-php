@@ -29,7 +29,7 @@ class ValidateVoiceRequest
         };
 
         if (!$validateJSONPath('$.AddOns')) {
-            return $rejectIncomingCall();
+          return $next($request);
         }
 
         $JSONPaths = [

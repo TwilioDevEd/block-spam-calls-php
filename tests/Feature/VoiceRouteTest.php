@@ -26,8 +26,7 @@ class VoiceRouteTest extends TestCase
     public static function setUpBeforeClass()
     {
         $fixturesDir = './tests/fixtures';
-        $fixtures = scandir($fixturesDir);
-
+        $fixtures = preg_grep("/\w/", scandir($fixturesDir)); 
         $AddOnValues = new \stdClass;
 
         foreach ($fixtures as $filename) {
@@ -43,7 +42,7 @@ class VoiceRouteTest extends TestCase
      *
      * @return void
      */
-    public function testFailWithoutAddonsOnPOST()
+    public function testSuccessWithoutAddonsOnPOST()
     {
         $response = $this->post('/api/voice');
         $response->assertHeader('Content-Type', 'text/xml; charset=UTF-8');
@@ -51,7 +50,7 @@ class VoiceRouteTest extends TestCase
         $xmlResponse = new SimpleXMLElement($response->getContent());
         $rejectElements = $xmlResponse->xpath('/Response/Reject');
         $hasRejectVerb = count($rejectElements) > 0;
-        $this->assertTrue($hasRejectVerb);
+        $this->assertFalse($hasRejectVerb);
 
         $response->assertStatus(200);
     }
