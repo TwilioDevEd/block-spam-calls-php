@@ -12,13 +12,36 @@ Learn how to use Twilio add-ons to block spam calls.
 
 First you need to install [PHP](http://php.net/manual/en/install.php) and [Laravel](https://laravel.com/docs/5.4).
 
-To run the app locally, clone this repository and `cd` into its directory:
+### Windows
+To install PHP on Windows installation is straightforward with [Chocolatey](https://chocolatey.org/install):
+1. First install PHP
+    ```bash
+    choco install php -y
+    ```
+
+1. Enable required extensions in `php.ini`
+    ```bash
+    # Uncomment the following line:
+    ;extension=php_openssl.dll
+    ;extension=php_mbstring.dll
+    ```
+1. Install Composer
+    ```bash
+    choco install composer -y
+    ```
+
+### The following steps apply to Windows and all other platforms
 
 1. First clone this repository and `cd` into its directory:
    ```bash
    git clone https://github.com/TwilioDevEd/block-spam-calls-php.git
    cd block-spam-calls-php
    ```
+
+1. Install Laravel
+    ```bash
+    composer global require "laravel/installer"
+    ```
 
 1. Install dependencies:
 
