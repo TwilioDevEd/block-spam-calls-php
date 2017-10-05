@@ -33,7 +33,7 @@ class ValidateVoiceRequest
         }
 
         $JSONPaths = [
-            'isWhitePagesSpam' => '$.*.*.whitepages_pro_phone_rep..[?(@.level==4)]',
+            'isWhitePagesSpam' => '$..whitepages_pro_phone_rep..[?(@.type=="ScamOrFraud")]',
             'isNomoroboSpam' => '$.*.*.nomorobo_spamscore..[?(@.score==1)]',
             'nomoroboFailed' => '$.*.*.[?(@.status=="failed")]',
             'isMarchexSpam' => '$.*.*.marchex_cleancall..[?(@.recommendation!="PASS")]'
