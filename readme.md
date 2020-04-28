@@ -3,8 +3,8 @@
 </a>
 
 # Block Spam Calls. Powered by Twilio - PHP/Laravel
-[![Build
-Status](https://travis-ci.org/TwilioDevEd/block-spam-calls-php.svg?branch=master)](https://travis-ci.org/TwilioDevEd/block-spam-calls-php)
+
+![](https://github.com/TwilioDevEd/block-spam-calls-php/workflows/Laravel/badge.svg)
 
 > We are currently in the process of updating this sample template. If you are encountering any issues with the sample, please open an issue at [github.com/twilio-labs/code-exchange/issues](https://github.com/twilio-labs/code-exchange/issues) and we'll try to help you.
 
@@ -15,38 +15,13 @@ Follow the beginning of the [Block Spam Calls and RoboCalls guide](https://www.t
 
 ## Local development
 
-First you need to install [PHP](http://php.net/manual/en/install.php) and [Laravel](https://laravel.com/docs/5.4).
+1. First you need to install [PHP](http://php.net/manual/en/install.php).
 
-### Windows
-To install PHP on Windows installation is straightforward with [Chocolatey](https://chocolatey.org/install):
-1. First install PHP
-    ```bash
-    choco install php -y
-    ```
-
-1. Enable required extensions in `php.ini`
-    ```bash
-    # Uncomment the following line:
-    ;extension=php_openssl.dll
-    ;extension=php_mbstring.dll
-    ```
-1. Install Composer
-    ```bash
-    choco install composer -y
-    ```
-
-### The following steps apply to Windows and all other platforms
-
-1. First clone this repository and `cd` into its directory:
+1. Clone this repository and `cd` into its directory:
    ```bash
    git clone https://github.com/TwilioDevEd/block-spam-calls-php.git
    cd block-spam-calls-php
    ```
-
-1. Install Laravel
-    ```bash
-    composer global require "laravel/installer"
-    ```
 
 1. Install dependencies:
 
@@ -57,7 +32,6 @@ To install PHP on Windows installation is straightforward with [Chocolatey](http
 1. Create the `.env` file with the default application settings:
     ```bash
     cp .env.example .env
-    source .env
     ```
 
 1. Generate the `APP_KEY`:
@@ -76,7 +50,7 @@ To actually forward incoming calls, your development server will need to be publ
 Once you have started ngrok, update your TwiML app's voice URL setting to use your ngrok hostname, so it will look something like this:
 
 ```bash
-http://88b37ada.ngrok.io/api/voice
+https://<your-ngrok-subdomain>.ngrok.io/api/voice
 ```
 
 ## Run the tests
@@ -90,5 +64,6 @@ You can run the tests locally running:
 ## Meta
 
 * No warranty expressed or implied. Software is as is. Diggity.
+* The CodeExchange repository can be found [here](https://github.com/twilio-labs/code-exchange/).
 * [MIT License](http://www.opensource.org/licenses/mit-license.html)
 * Lovingly crafted by Twilio Developer Education.
