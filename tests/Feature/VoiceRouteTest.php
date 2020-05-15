@@ -65,10 +65,10 @@ class VoiceRouteTest extends TestCase
      *
      * @return void
      */
-    public function testSuccessIfNumberIsInWhitepagesOnPOST()
+    public function testSuccessIfNumberIsInEkataOnPOST()
     {
         $response = $this->post( '/api/voice',
-            [ 'AddOns' => self::$AddOnValues->successful_whitepages]
+            [ 'AddOns' => self::$AddOnValues->successful_ekata]
         );
 
         self::$logger->debug($response->getContent());
@@ -91,9 +91,9 @@ class VoiceRouteTest extends TestCase
      *
      * @return void
      */
-    public function testFailWhenWhitePagesReputationIsLowOnPOST()
+    public function testFailWhenEkatasReputationIsLowOnPOST()
     {
-        $response = $this->post( '/api/voice', [ 'AddOns' => self::$AddOnValues->spam_whitepages]);
+        $response = $this->post( '/api/voice', [ 'AddOns' => self::$AddOnValues->spam_ekata]);
 
         $xmlResponse = new SimpleXMLElement($response->getContent());
         $hasRejectVerb = count($xmlResponse->xpath('/Response/Reject')) > 0;
