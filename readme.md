@@ -63,44 +63,44 @@ After the above requirements have been met:
 
 1. Clone this repository and `cd` into it
 
-```bash
-git clone git@github.com:TwilioDevEd/block-spam-calls-php.git
-cd block-spam-calls-php
-```
+    ```bash
+    git clone git@github.com:TwilioDevEd/block-spam-calls-php.git
+    cd block-spam-calls-php
+    ```
 
 1. Install PHP dependencies
 
-```bash
-make install
-```
+    ```bash
+    make install
+    ```
 
 1. Set your environment variables
 
-```bash
-cp .env.example .env
-```
+    ```bash
+    cp .env.example .env
+    ```
 
-See [Twilio Account Settings](#twilio-account-settings) to locate the necessary environment variables.
+   See [Twilio Account Settings](#twilio-account-settings) to locate the necessary environment variables.
 
 1. Run the application
 
-```bash
-make serve
-```
+    ```bash
+    make serve
+    ```
 
 1. To actually forward incoming calls, your development server will need to be publicly accessible. [We recommend using ngrok to solve this problem](https://www.twilio.com/blog/2015/09/6-awesome-reasons-to-use-ngrok-when-testing-webhooks.html).
 
-Once you have started ngrok, update your TwiML app's voice URL setting to use your ngrok hostname, so it will look something like this:
+   Once you have started ngrok, update your TwiML app's voice URL setting to use your ngrok hostname, so it will look something like this:
 
-```bash
-https://<your-ngrok-subdomain>.ngrok.io/api/voice
-```
+    ```bash
+    https://<your-ngrok-subdomain>.ngrok.io/api/voice
+    ```
 
-Finally, click on `Call` to test your application. See [Create a TwiML App](#create-a-twiml-app) to set the Voice URL.
+   Finally, click on `Call` to test your application. See [Create a TwiML App](#create-a-twiml-app) to set the Voice URL.
 
-  ![](images/create-twiml-call-button.png)
+    ![](images/create-twiml-call-button.png)
 
-  That's it!
+That's it!
 
 ### Unit and Integration Tests
 
