@@ -45,8 +45,8 @@ class ValidateVoiceRequest
                 if ($this->isNomoroboSpam($addOnsData)) {
                     return $this->rejectIncomingCall();
                 }
-            } elseif (Arr::get($addOnsData, 'results.whitepages_pro_phone_rep')){
-                if ($this->isWhitePageSpam($addOnsData)) {
+            } elseif (Arr::get($addOnsData, 'results.ekata_pro_phone_rep')){
+                if ($this->isEkataSpam($addOnsData)) {
                     return $this->rejectIncomingCall();
                 }
             } else {
@@ -126,19 +126,19 @@ class ValidateVoiceRequest
      * @return bool
      * @throws AddOnFailureException
      */
-    private function isWhitePageSpam($addOnsData)
+    private function isEkataSpam($addOnsData)
     {
-        $whitePagesReputationData = Arr::get(
+        $ekataReputationData = Arr::get(
             $addOnsData,
-            'results.whitepages_pro_phone_rep'
+            'results.ekata_pro_phone_rep'
         );
 
-        if (Arr::get($whitePagesReputationData, 'status') == 'failed') {
-            throw new AddOnFailureException(Arr::get($whitePagesReputationData, 'message'));
+        if (Arr::get($ekataReputationData, 'status') == 'failed') {
+            throw new AddOnFailureException(Arr::get($ekataReputationData, 'message'));
         }
 
         $reputationScore = (int)Arr::get(
-            $whitePagesReputationData,
+            $ekataReputationData,
             'result.reputation_details.score'
         );
 

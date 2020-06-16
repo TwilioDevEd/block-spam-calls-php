@@ -412,3 +412,5 @@ composer.lock
 /wpcs/*
 .idea
 .phpunit.result.cache
+.env
+.editorconfig
