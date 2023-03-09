@@ -14,7 +14,7 @@
         "illuminate/routing": "^7.9",
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
-        "twilio/sdk": "^6.2.0"
+        "twilio/sdk": "^7.0.0"
     },
     "require-dev": {
         "facade/ignition": "^2.0",
